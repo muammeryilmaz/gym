@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Güray Pilates Salonu</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">GP</div>
+      <div>
+        <h1>Güray Pilates Salonu</h1>
+        <div class="badge">Hoca &amp; Randevu Planlama</div>
+      </div>
+    </div>
+    <div class="today" id="today"></div>
+  </header>
+
+  <main>
+    <section class="section-card">
+      <div class="section-title">
+        <h2>Yaklaşan Randevular</h2>
+        <span>Bugünden sonraki 1 ay gösterilir</span>
+      </div>
+      <div class="grid schedule-grid" id="schedule-grid"></div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-title">
+        <h2>Hoca ve Danışan Yönetimi</h2>
+        <span>Hemen ekle, kaldır</span>
+      </div>
+      <div class="grid form-grid">
+        <div>
+          <div class="label">Yeni Hoca</div>
+          <input id="instructor-first" type="text" placeholder="Ad" />
+          <input id="instructor-last" type="text" placeholder="Soyad" style="margin-top:8px" />
+          <div style="margin-top:10px; display:flex; gap:8px; align-items:center;">
+            <button class="primary" id="add-instructor">Hoca Ekle</button>
+          </div>
+        </div>
+        <div>
+          <div class="label">Yeni Danışan</div>
+          <select id="client-instructor">
+            <option value="">Hoca seç</option>
+          </select>
+          <input id="client-first" type="text" placeholder="Ad" style="margin-top:8px" />
+          <input id="client-last" type="text" placeholder="Soyad" style="margin-top:8px" />
+          <div style="margin-top:10px; display:flex; gap:8px; align-items:center;">
+            <button class="secondary" id="add-client">Danışan Ekle</button>
+          </div>
+        </div>
+        <div>
+          <div class="label">Danışan Yönetimi</div>
+          <select id="manage-client"></select>
+          <div class="helper" id="manage-client-info"></div>
+          <select id="manage-client-instructor" style="margin-top:8px"></select>
+          <div style="margin-top:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+            <button class="primary" id="change-client-instructor">Hoca Değiştir</button>
+            <button class="secondary" id="delete-client">Danışanı Sil</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-title">
+        <h2>Randevu Oluştur</h2>
+        <span>Haftalık, aylık veya tek seferlik</span>
+      </div>
+      <div class="grid form-grid">
+        <div>
+          <div class="label">Hoca</div>
+          <select id="booking-instructor"></select>
+        </div>
+        <div>
+          <div class="label">Danışan</div>
+          <select id="booking-client"></select>
+          <div class="helper">Her danışan sadece bir hocaya bağlıdır.</div>
+        </div>
+        <div>
+          <div class="label">Zaman Türü</div>
+          <select id="booking-method">
+            <option value="weekly">Haftanın günü</option>
+            <option value="monthly">Ayın günleri</option>
+            <option value="once">Tek seferlik</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">Saat</div>
+          <input type="time" id="booking-time" list="time-options" />
+        </div>
+        <div id="weekly-fields">
+          <div class="label">Gün</div>
+          <select id="booking-day">
+            <option value="1">Pazartesi</option>
+            <option value="2">Salı</option>
+            <option value="3">Çarşamba</option>
+            <option value="4">Perşembe</option>
+            <option value="5">Cuma</option>
+            <option value="6">Cumartesi</option>
+            <option value="0">Pazar</option>
+          </select>
+        </div>
+        <div id="monthly-fields" style="display:none">
+          <div class="label">Ayın günleri</div>
+          <div class="day-grid" id="day-grid"></div>
+          <div class="helper">Birden fazla gün seçilebilir.</div>
+        </div>
+        <div id="once-fields" style="display:none">
+          <div class="label">Tarih</div>
+          <input type="date" id="booking-date" />
+        </div>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+        <button class="primary" id="create-booking">Randevu Oluştur</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="edit-modal">
+    <div class="modal-card">
+      <h3 style="margin-top:0">Randevuyu Düzenle</h3>
+      <div class="helper" id="edit-meta"></div>
+      <div class="grid form-grid">
+        <div>
+          <div class="label">Zaman Türü</div>
+          <select id="edit-method">
+            <option value="weekly">Haftanın günü</option>
+            <option value="monthly">Ayın günleri</option>
+            <option value="once">Tek seferlik</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">Saat</div>
+          <input type="time" id="edit-time" list="time-options" />
+        </div>
+        <div>
+          <div class="label">Kapsam</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <label class="badge"><input type="radio" name="edit-scope" value="single" id="scope-single"> Bu randevu</label>
+            <label class="badge"><input type="radio" name="edit-scope" value="all" id="scope-all" checked> Tüm tekrarlar</label>
+          </div>
+        </div>
+        <div id="edit-weekly-fields">
+          <div class="label">Gün</div>
+          <select id="edit-day">
+            <option value="1">Pazartesi</option>
+            <option value="2">Salı</option>
+            <option value="3">Çarşamba</option>
+            <option value="4">Perşembe</option>
+            <option value="5">Cuma</option>
+            <option value="6">Cumartesi</option>
+            <option value="0">Pazar</option>
+          </select>
+        </div>
+        <div id="edit-monthly-fields" style="display:none">
+          <div class="label">Ayın günleri</div>
+          <div class="day-grid" id="edit-day-grid"></div>
+        </div>
+        <div id="edit-once-fields" style="display:none">
+          <div class="label">Tarih</div>
+          <input type="date" id="edit-date" />
+          <div class="helper">Sadece bu randevuyu güncelleyecekseniz tarih otomatik gelir.</div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary" id="delete-booking">Sil</button>
+        <button class="primary" id="save-booking">Kaydet</button>
+        <button class="secondary" id="close-modal">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <datalist id="time-options"></datalist>
+  <script src="/app.js"></script>
+</body>
+</html>

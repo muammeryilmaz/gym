@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "rm -rf dist && mkdir -p dist && cp -R public/* dist/"
   },
   "dependencies": {
     "express": "^4.19.2"
