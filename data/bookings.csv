@@ -1,0 +1,7 @@
+id,instructorId,clientId,method,time,date,dayOfWeek,daysOfMonth,exclusions
+f5df5653-b439-4942-b249-fb74f2c13d11,1afd206b-9210-48ef-bb3f-9368f2d19cbf,61ed54e8-1d70-4d91-b2a1-d9294b0fe5b2,weekly,12:11,,4,,2025-12-10;2026-01-01;2025-12-25
+b36073bd-a02a-4c8f-b631-9cbb7ef7c54e,1afd206b-9210-48ef-bb3f-9368f2d19cbf,61ed54e8-1d70-4d91-b2a1-d9294b0fe5b2,once,12:11,2025-12-10,,,
+c5f8e3bc-982d-4f14-9e3e-f1749766adb9,1afd206b-9210-48ef-bb3f-9368f2d19cbf,61ed54e8-1d70-4d91-b2a1-d9294b0fe5b2,once,14:11,2026-01-01,,,
+97936aa7-439b-49f1-b964-dacc88d24a50,1afd206b-9210-48ef-bb3f-9368f2d19cbf,61ed54e8-1d70-4d91-b2a1-d9294b0fe5b2,once,15:11,2025-12-25,,,
+b61e244d-0b8c-4331-b1a7-bfc27f1819ec,0bfa2be1-ffc2-408e-b6db-60adfe0db2f9,cb9e1c7a-a5a9-4b0d-a43a-bc55e50ab9cf,weekly,22:33,,3,,2025-12-10
+278483e1-f58c-49d7-b674-008bc1c4d827,0bfa2be1-ffc2-408e-b6db-60adfe0db2f9,cb9e1c7a-a5a9-4b0d-a43a-bc55e50ab9cf,once,22:33,2025-12-11,,,

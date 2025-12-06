@@ -1,0 +1,17 @@
+{
+  "name": "guray-pilates-salonu",
+  "version": "1.0.0",
+  "description": "Pilates salonu icin randevu ve hoca yonetimi",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.53.0"
+  }
+}
