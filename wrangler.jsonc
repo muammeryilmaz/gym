@@ -1,7 +1,12 @@
 {
   "name": "guray-pilates-salonu",
   "compatibility_date": "2025-12-07",
-  "assets": {
-    "directory": "dist"
-  }
+  "pages_build_output_dir": "dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gymDb",
+      "database_id": "73d32b12-acf5-4761-93e3-89044743fdc4"
+    }
+  ]
 }
