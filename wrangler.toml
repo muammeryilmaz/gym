@@ -1,0 +1,8 @@
+name = "guray-pilates-salonu"
+compatibility_date = "2024-08-01"
+pages_build_output_dir = "./public"
+
+[[kv_namespaces]]
+binding = "DATA"
+# TODO: Cloudflare Dashboard > Workers > KV > Create namespace and paste its ID here
+id = "1bb3b32c4f3cd7571f4f8c3b225ed05d"

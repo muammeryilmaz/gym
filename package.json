@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "pages:dev": "wrangler pages dev public --kv DATA",
+    "pages:deploy": "wrangler pages deploy public"
   },
   "dependencies": {
     "express": "^4.19.2"

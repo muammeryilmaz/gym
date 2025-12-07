@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Güray Pilates Salonu</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 20% 20%, #f4f7ff 0, #f9fafc 35%, #ffffff 65%);
+        color: #0f172a;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 48px 16px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 32px;
+        max-width: 720px;
+        width: min(720px, 100%);
+        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      }
+      h1 {
+        margin: 0 0 12px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        line-height: 1.6;
+        margin: 0 0 10px;
+      }
+      code {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-size: 0.95em;
+      }
+      a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Güray Pilates Salonu</h1>
+      <p>Bu proje Cloudflare Pages + Functions üzerinde çalışacak şekilde hazırlandı.</p>
+      <p>API uçları:</p>
+      <p>
+        <code>/api/all</code>,
+        <code>/api/occurrences</code>,
+        <code>/api/instructors</code>,
+        <code>/api/clients</code>,
+        <code>/api/bookings</code>
+      </p>
+      <p>GitHub Pages yerine Cloudflare Pages yayınlayarak hem statik içerik hem de serverless API birlikte çalışır.</p>
+    </main>
+  </body>
+</html>
