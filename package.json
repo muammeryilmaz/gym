@@ -2,14 +2,15 @@
   "name": "guray-pilates-salonu",
   "version": "1.0.0",
   "description": "Pilates salonu icin randevu ve hoca yonetimi",
-  "main": "functions/api/[...catchall].js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "wrangler pages dev dist --compatibility-date=2025-12-07",
-    "dev": "npm run start",
-    "build": "rm -rf dist && mkdir -p dist && cp -R public/* dist/"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.19.2"
+  },
   "devDependencies": {
     "wrangler": "^4.53.0"
   }
